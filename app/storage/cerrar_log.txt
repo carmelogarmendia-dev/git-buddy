@@ -1,0 +1,2 @@
+2026-05-11 09:57:27 - Iniciando cerrar.php
+No se encontró chrome_pid.txt

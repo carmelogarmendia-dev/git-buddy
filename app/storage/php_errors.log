@@ -1,0 +1,103 @@
+[01-May-2026 10:37:27 UTC] PHP Fatal error:  Access level to Controllers\GitHubController::jsonResponse() must be protected (as in class Core\Controller) or weaker in C:\proyectos\git-buddy\src\Controllers\GitHubController.php on line 339
+[01-May-2026 10:37:27 UTC] PHP Stack trace:
+[01-May-2026 10:37:27 UTC] PHP   1. {main}() C:\proyectos\git-buddy\public\index.php:0
+[01-May-2026 10:37:27 UTC] PHP   2. Router->dispatch($requestMethod = 'GET', $requestUri = '/github/config') C:\proyectos\git-buddy\public\index.php:115
+[01-May-2026 10:37:27 UTC] PHP   3. class_exists($class = 'Controllers\\GitHubController') C:\proyectos\git-buddy\public\index.php:70
+[01-May-2026 10:37:27 UTC] PHP   4. {closure:C:\proyectos\git-buddy\public\index.php:16-51}($class = 'Controllers\\GitHubController') C:\proyectos\git-buddy\public\index.php:70
+[01-May-2026 10:37:27 UTC] PHP   5. require() C:\proyectos\git-buddy\public\index.php:30
+[01-May-2026 10:37:49 UTC] PHP Fatal error:  Access level to Controllers\GitHubController::jsonResponse() must be protected (as in class Core\Controller) or weaker in C:\proyectos\git-buddy\src\Controllers\GitHubController.php on line 339
+[01-May-2026 10:37:49 UTC] PHP Stack trace:
+[01-May-2026 10:37:49 UTC] PHP   1. {main}() C:\proyectos\git-buddy\public\index.php:0
+[01-May-2026 10:37:49 UTC] PHP   2. Router->dispatch($requestMethod = 'GET', $requestUri = '/github/config') C:\proyectos\git-buddy\public\index.php:115
+[01-May-2026 10:37:49 UTC] PHP   3. class_exists($class = 'Controllers\\GitHubController') C:\proyectos\git-buddy\public\index.php:70
+[01-May-2026 10:37:49 UTC] PHP   4. {closure:C:\proyectos\git-buddy\public\index.php:16-51}($class = 'Controllers\\GitHubController') C:\proyectos\git-buddy\public\index.php:70
+[01-May-2026 10:37:49 UTC] PHP   5. require() C:\proyectos\git-buddy\public\index.php:30
+[01-May-2026 10:38:00 UTC] PHP Fatal error:  Access level to Controllers\GitHubController::jsonResponse() must be protected (as in class Core\Controller) or weaker in C:\proyectos\git-buddy\src\Controllers\GitHubController.php on line 339
+[01-May-2026 10:38:00 UTC] PHP Stack trace:
+[01-May-2026 10:38:00 UTC] PHP   1. {main}() C:\proyectos\git-buddy\public\index.php:0
+[01-May-2026 10:38:00 UTC] PHP   2. Router->dispatch($requestMethod = 'GET', $requestUri = '/github/config') C:\proyectos\git-buddy\public\index.php:115
+[01-May-2026 10:38:00 UTC] PHP   3. class_exists($class = 'Controllers\\GitHubController') C:\proyectos\git-buddy\public\index.php:70
+[01-May-2026 10:38:00 UTC] PHP   4. {closure:C:\proyectos\git-buddy\public\index.php:16-51}($class = 'Controllers\\GitHubController') C:\proyectos\git-buddy\public\index.php:70
+[01-May-2026 10:38:00 UTC] PHP   5. require() C:\proyectos\git-buddy\public\index.php:30
+[11-May-2026 11:32:03 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:32:07 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:35:09 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:37:51 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:41:22 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:43:13 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:45:09 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[11-May-2026 11:47:20 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "Core\VIEWS_PATH" in C:\proyectos\git-buddy\app\src\Core\View.php:12
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\HomeController.php(13): Core\View::render('home/index', Array)
+#1 C:\proyectos\git-buddy\app\public\index.php(85): Controllers\HomeController->index()
+#2 C:\proyectos\git-buddy\app\public\index.php(119): Router->dispatch('GET', '/')
+#3 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Core\View.php on line 12
+[12-May-2026 09:42:05 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\proyectos\git-buddy\app\src\Controllers\HomeController.php on line 54
+[12-May-2026 09:44:46 UTC] PHP Fatal error:  Uncaught TypeError: strpos(): Argument #1 ($haystack) must be of type string, false given in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php:309
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php(309): strpos(false, 'C:\\proyectos\\gi...')
+#1 C:\proyectos\git-buddy\app\src\Core\Router.php(62): Controllers\GitHubController->cloneMyRepo()
+#2 C:\proyectos\git-buddy\app\src\Core\Router.php(33): Core\Router->callHandler('GitHubControlle...')
+#3 C:\proyectos\git-buddy\app\public\index.php(84): Core\Router->dispatch('POST', '/github/clone-m...')
+#4 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php on line 309
+[12-May-2026 09:44:55 UTC] PHP Fatal error:  Uncaught TypeError: strpos(): Argument #1 ($haystack) must be of type string, false given in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php:309
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php(309): strpos(false, 'C:\\proyectos\\gi...')
+#1 C:\proyectos\git-buddy\app\src\Core\Router.php(62): Controllers\GitHubController->cloneMyRepo()
+#2 C:\proyectos\git-buddy\app\src\Core\Router.php(33): Core\Router->callHandler('GitHubControlle...')
+#3 C:\proyectos\git-buddy\app\public\index.php(84): Core\Router->dispatch('POST', '/github/clone-m...')
+#4 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php on line 309
+[12-May-2026 09:45:15 UTC] PHP Fatal error:  Uncaught TypeError: strpos(): Argument #1 ($haystack) must be of type string, false given in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php:309
+Stack trace:
+#0 C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php(309): strpos(false, 'C:\\proyectos\\gi...')
+#1 C:\proyectos\git-buddy\app\src\Core\Router.php(62): Controllers\GitHubController->cloneMyRepo()
+#2 C:\proyectos\git-buddy\app\src\Core\Router.php(33): Core\Router->callHandler('GitHubControlle...')
+#3 C:\proyectos\git-buddy\app\public\index.php(84): Core\Router->dispatch('POST', '/github/clone-m...')
+#4 {main}
+  thrown in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php on line 309
+[12-May-2026 10:17:11 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\proyectos\git-buddy\app\src\Controllers\HomeController.php on line 54
