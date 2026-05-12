@@ -15,17 +15,31 @@
 <body class="<?= $bodyClass ?? '' ?>">
     
     <!-- BARRA SUPERIOR (Unificada) -->
-    <nav class="navbar navbar-dark bg-dark px-3 mb-3">
-        <a href="/" class="navbar-brand"><i class="fas fa-code-branch"></i> Git Buddy</a>
-        <div>
-            <a href="/github/config" class="btn btn-outline-light btn-sm me-2">
-                <i class="fab fa-github"></i> GitHub
+    <nav class="navbar navbar-dark bg-dark px-3 mb-0 shadow-sm">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand fw-bold">
+                <i class="fas fa-code-branch text-primary"></i> Git Buddy
             </a>
-            <button id="btnCerrarApp" class="btn btn-outline-danger btn-sm">
-                <i class="fas fa-power-off"></i> Salir
-            </button>
+            
+            <!-- Acciones de Proyecto (Dinámicas) -->
+            <div id="projectNavbarActions" class="d-flex align-items-center gap-2 hidden-element">
+                <span class="badge bg-secondary me-2 d-none d-md-inline" id="navProjectName"></span>
+                <button class="btn btn-outline-light btn-sm" id="navRefreshBtn">
+                    <i class="fas fa-sync-alt"></i> <span class="d-none d-sm-inline">Refrescar</span>
+                </button>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <a href="/github/config" class="btn btn-link text-light text-decoration-none me-3">
+                    <i class="fab fa-github"></i> <span class="d-none d-md-inline">GitHub</span>
+                </a>
+                <button id="btnCerrarApp" class="btn btn-danger btn-sm px-3">
+                    <i class="fas fa-power-off"></i> <span class="d-none d-sm-inline">Cerrar</span>
+                </button>
+            </div>
         </div>
     </nav>
+
     
     <!-- Toast Container -->
     <div class="toast-container" id="toastContainer"></div>

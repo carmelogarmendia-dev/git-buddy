@@ -4,9 +4,6 @@
 
 **Git Buddy** es una herramienta visual de escritorio diseñada específicamente para **Windows**. Transforma la complejidad de Git en una experiencia intuitiva, permitiendo que diseñadores, sitebuilders y desarrolladores junior gestionen sus repositorios de GitHub sin tocar una sola línea de comandos.
 
-<p align="center">
-  <img src="https://via.placeholder.com/1000x400?text=Git+Buddy+Visual+Interface" alt="Git Buddy Banner" width="100%">
-</p>
 
 ---
 
@@ -25,6 +22,9 @@ Git es una herramienta increíblemente poderosa, pero su curva de aprendizaje pu
 | :--- | :--- |
 | 📁 **Selector Visual** | Elige tu carpeta con el selector nativo de Windows. |
 | 🌳 **Árbol Inteligente** | Navega por tus archivos con checkboxes intuitivos. |
+| 🌐 **Destino Remoto** | Configura la URL de tu repositorio de GitHub directamente. |
+| 🚀 **One-Click Push** | Commit y Push automáticos con feedback visual. |
+
 | 🚫 **Gestión de .gitignore** | Click derecho sobre cualquier archivo para ignorarlo. |
 | 🐙 **Integración GitHub** | Conexión segura mediante Token Personal. |
 | 📥 **Clonación Directa** | Clona repositorios públicos o privados desde la propia app. |
@@ -63,13 +63,15 @@ Tu seguridad es nuestra prioridad:
 ## 📥 Instalación (Portable)
 Git Buddy es **100% portable**. No requiere instalación ni permisos de administrador.
 
-1.  **Descarga:** Obtén el `.zip` desde la sección de [Releases](https://github.com/tu-usuario/git-buddy/releases).
-2.  **Extrae:** Descomprime en cualquier carpeta (ej. `C:\Herramientas\GitBuddy`).
-3.  **Lanza:** Doble clic en `GitBuddy.vbs`.
+1.  **Descarga:** Obtén el código o el ejecutable.
+2.  **Configura:** Conecta tu Token de GitHub en la configuración.
+3.  **Conecta:** Indica la URL de tu repositorio en el panel "Destino en GitHub".
+4.  **Lanza:** Doble clic en `GitBuddy.vbs` para arrancar.
+
 
 ---
 
-## 🚀 Guía Rápida
+## 🚀 Guía Rápida 
 
 ### 1. Configuración Inicial
 Haz clic en el botón **GitHub** y pega tu *Personal Access Token*. Si no tienes uno, la app te guiará paso a paso para crearlo en 30 segundos.

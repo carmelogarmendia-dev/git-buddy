@@ -165,7 +165,12 @@ function cerrarProyecto() {
             explorerTab.disabled = true;
         }
         
+        // Ocultar acciones en la barra superior
+        const projectNavbarActions = document.getElementById('projectNavbarActions');
+        if (projectNavbarActions) projectNavbarActions.classList.add('hidden-element');
+
         // Volver a Inicio
+
         const homeTab = document.getElementById('home-tab');
         if (homeTab) {
             const tab = new bootstrap.Tab(homeTab);
@@ -474,14 +479,30 @@ function iniciarEventosExplorador() {
         });
     });
     
-    // 3. Botón Refrescar
+    // 3. Botón Refrescar (Local y Global)
     const refreshBtn = document.getElementById('refreshBtn');
-    if (refreshBtn) {
-        refreshBtn.addEventListener('click', () => {
-            cargarExploradorEnTab();
-            showToast('🔄 Estado del repositorio actualizado', 'success', 2000);
-        });
+    const navRefreshBtn = document.getElementById('navRefreshBtn');
+    const projectNavbarActions = document.getElementById('projectNavbarActions');
+    const navProjectName = document.getElementById('navProjectName');
+    
+    // Mostrar acciones en barra superior
+    if (projectNavbarActions) {
+        projectNavbarActions.classList.remove('hidden-element');
+        const currentPath = localStorage.getItem('gitbuddy_current_project');
+        if (currentPath && navProjectName) {
+            const name = currentPath.split('/').pop() || currentPath.split('\\').pop();
+            navProjectName.textContent = name;
+        }
     }
+
+    const triggerRefresh = () => {
+        cargarExploradorEnTab();
+        showToast('🔄 Estado del repositorio actualizado', 'success', 2000);
+    };
+
+    if (refreshBtn) refreshBtn.addEventListener('click', triggerRefresh);
+    if (navRefreshBtn) navRefreshBtn.addEventListener('click', triggerRefresh);
+
 
     // 3.5 Cargar Estado Remoto (NUEVO)
     cargarEstadoRemoto();

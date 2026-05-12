@@ -81,12 +81,23 @@ class ProjectController extends Controller
             return;
         }
         
+        $path = $_SESSION['current_project'];
+        
+        try {
+            $this->fileExplorer->setProjectPath($path);
+            $_SESSION['project_structure'] = $this->fileExplorer->scanDirectory($path);
+            $_SESSION['project_stats'] = $this->fileExplorer->getProjectStats($path);
+        } catch (\Exception $e) {
+            // Si falla el re-escaneo, usamos lo que tengamos en sesión
+        }
+        
         View::renderContent('project/explorer-content', [
-            'project_path' => $_SESSION['current_project'],
+            'project_path' => $path,
             'stats' => $_SESSION['project_stats'] ?? [],
             'structure' => $_SESSION['project_structure'] ?? []
         ]);
     }
+
     
     public function addToGitignore(): void
     {
@@ -152,12 +163,8 @@ class ProjectController extends Controller
         $files = $input['files'] ?? [];
         $message = $input['message'] ?? '';
         
-        if (empty($files)) {
-            $this->jsonResponse(['success' => false, 'error' => 'No hay archivos seleccionados']);
-            return;
-        }
-        
         if (empty($message)) {
+
             $this->jsonResponse(['success' => false, 'error' => 'Mensaje de commit requerido']);
             return;
         }
@@ -171,19 +178,30 @@ class ProjectController extends Controller
         $projectPath = $_SESSION['current_project'];
         $errors = [];
         
-        foreach ($files as $file) {
-            if (!Security::validateFileInProject($file, $projectPath)) {
-                $errors[] = "Archivo inválido: $file";
-                continue;
-            }
-            
-            $file = escapeshellarg($file);
-            $command = 'git -C "' . str_replace('/', '\\', $projectPath) . '" add ' . $file . ' 2>&1';
+        if (empty($files)) {
+            // Si no hay archivos seleccionados, añadimos TODO (.)
+            $command = 'git -C "' . str_replace('/', '\\', $projectPath) . '" add . 2>&1';
             exec($command, $output, $returnCode);
             if ($returnCode !== 0) {
-                $errors[] = "Error al añadir $file: " . implode("\n", $output);
+                $errors[] = "Error al añadir todos los archivos: " . implode("\n", $output);
+            }
+        } else {
+            // Si hay selección, añadimos solo esos
+            foreach ($files as $file) {
+                if (!Security::validateFileInProject($file, $projectPath)) {
+                    $errors[] = "Archivo inválido: $file";
+                    continue;
+                }
+                
+                $file = escapeshellarg($file);
+                $command = 'git -C "' . str_replace('/', '\\', $projectPath) . '" add ' . $file . ' 2>&1';
+                exec($command, $output, $returnCode);
+                if ($returnCode !== 0) {
+                    $errors[] = "Error al añadir $file: " . implode("\n", $output);
+                }
             }
         }
+
         
         if (!empty($errors)) {
             $this->jsonResponse(['success' => false, 'error' => implode("\n", $errors)]);

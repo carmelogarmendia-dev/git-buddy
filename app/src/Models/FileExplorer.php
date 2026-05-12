@@ -19,16 +19,18 @@ class FileExplorer
     
     public function setProjectPath(string $path): void
     {
-        $this->projectPath = rtrim($path, '/');
+        $this->projectPath = rtrim($path, '/\\');
         $this->loadGitStatus();
     }
-    
+
     private function loadGitStatus(): void
     {
         $this->gitStatus = [];
         
-        if (!is_dir($this->projectPath . '/.git')) {
-            return;
+        $gitPath = $this->projectPath . '/.git';
+        if (!is_dir($gitPath)) {
+            $gitPath = str_replace('/', '\\', $this->projectPath) . '\\.git';
+            if (!is_dir($gitPath)) return;
         }
         
         $command = 'git -C "' . str_replace('/', '\\', $this->projectPath) . '" status --porcelain 2>&1';
@@ -36,6 +38,8 @@ class FileExplorer
         
         if ($returnCode === 0) {
             foreach ($output as $line) {
+
+
                 if (strlen($line) < 3) {
                     continue;
                 }
@@ -68,7 +72,12 @@ class FileExplorer
     public function getFileStatus(string $relativePath): string
     {
         $relativePath = str_replace('\\', '/', $relativePath);
-        $relativePath = trim($relativePath, './');
+        $relativePath = ltrim($relativePath, '/');
+        // Eliminar ./ inicial si existe
+        if (strpos($relativePath, './') === 0) {
+            $relativePath = substr($relativePath, 2);
+        }
+
         
         if (isset($this->gitStatus[$relativePath])) {
             return $this->gitStatus[$relativePath];

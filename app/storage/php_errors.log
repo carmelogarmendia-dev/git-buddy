@@ -101,3 +101,4 @@ Stack trace:
 #4 {main}
   thrown in C:\proyectos\git-buddy\app\src\Controllers\GitHubController.php on line 309
 [12-May-2026 10:17:11 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\proyectos\git-buddy\app\src\Controllers\HomeController.php on line 54
+[12-May-2026 10:36:01 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\proyectos\git-buddy\app\src\Controllers\ProjectController.php on line 207
