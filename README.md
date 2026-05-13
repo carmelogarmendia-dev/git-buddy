@@ -67,6 +67,7 @@ Git Buddy es **100% portable**. No requiere instalación ni permisos de administ
 2.  **Configura:** Conecta tu Token de GitHub en la configuración.
 3.  **Conecta:** Indica la URL de tu repositorio en el panel "Destino en GitHub".
 4.  **Lanza:** Doble clic en `GitBuddy.vbs` para arrancar.
+👉 [**Descargar GitBuddy.zip**](https://github.com/carmelogarmendia-dev/git-buddy/releases/download/v1.0.0/GitBuddy.zip)
 
 
 ---
